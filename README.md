@@ -78,6 +78,8 @@ This is a multi-threaded chat server written in C++. The server enables clients 
 - A while-loop continuously listens for messages from the client to maintain real-time communication.  
 - When a client disconnects, the server removes them from the global client list and any groups they were part of.  
 
+![Client Handling](img1.png)
+
 ### 3. Message Processing (handleCommands function)  
 #### Broadcast Messages (`/broadcast <message>`)  
 - Sent to all connected users except the sender.  
@@ -86,9 +88,9 @@ This is a multi-threaded chat server written in C++. The server enables clients 
 #### Private Messages (`/msg <username> <message>`)  
 - Searches the global client list for the recipient.  
 - Uses `privateMessageToUser()` to deliver the message.  
-- If the recipient is offline, a notification is sent back to the sender.
+- If the recipient is offline, a notification is sent back to the sender.  
 
-<a></imgsrc = "img1.png"></a>
+![Private Messaging](img2.png)
 
 #### Group Management  
 - **Create Group** (`/create_group <groupname>`): Initializes a new group with the creator as the first member.  
@@ -97,6 +99,8 @@ This is a multi-threaded chat server written in C++. The server enables clients 
 - **Send Group Message** (`/group_msg <groupname> <message>`): Sends the message to all group members.  
 
 ---
+
+![Group Messaging](img3.png)
 
 ## Synchronization & Thread Safety  
 - Since multiple clients can connect simultaneously, shared resources (client list and groups list) must be protected.  
@@ -171,4 +175,4 @@ We, the members of the team submitting this assignment, declare that we did not 
 ## Feedback  
 - Working with **multi-threading** was a challenge.  
 - We were unfamiliar with **relevant libraries** for implementation.  
-- **In-class discussions** on these aspects would be helpful for students.
+- **In-class discussions** on these aspects would be helpful for students.  
