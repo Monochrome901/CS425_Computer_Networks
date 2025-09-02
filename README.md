@@ -1,5 +1,5 @@
 # Assignment 1  
-## CS 424: Computer Networks  
+## CS 425: Computer Networks  
 
 ---
 
